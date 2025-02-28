@@ -23,6 +23,7 @@ VkCommandBufferAllocateInfo vkinit::command_buffer_allocate_info(
     info.commandPool = pool;
     info.commandBufferCount = count;
     info.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+
     return info;
 }
 //< init_cmd
@@ -33,9 +34,9 @@ VkCommandBufferBeginInfo vkinit::command_buffer_begin_info(VkCommandBufferUsageF
     VkCommandBufferBeginInfo info = {};
     info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
     info.pNext = nullptr;
-
     info.pInheritanceInfo = nullptr;
     info.flags = flags;
+
     return info;
 }
 //< init_cmd_draw
@@ -46,7 +47,6 @@ VkFenceCreateInfo vkinit::fence_create_info(VkFenceCreateFlags flags /*= 0*/)
     VkFenceCreateInfo info = {};
     info.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
     info.pNext = nullptr;
-
     info.flags = flags;
 
     return info;
@@ -58,6 +58,7 @@ VkSemaphoreCreateInfo vkinit::semaphore_create_info(VkSemaphoreCreateFlags flags
     info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
     info.pNext = nullptr;
     info.flags = flags;
+
     return info;
 }
 //< init_sync
